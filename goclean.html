@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoClean VIP | House & Garden Cleaning</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#222;scroll-behavior:smooth;}
+section{padding:70px 20px;}
+h2{text-align:center;margin-bottom:30px;font-size:26px;font-weight:700;}
+.hero{
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('https://images.unsplash.com/photo-1507089947367-4c1da9775b1f');
+background-size:cover;background-position:center;
+color:white;text-align:center;padding:120px 20px;
+animation:fadeIn 1.5s ease-in-out;
+}
+.hero h1{font-size:34px;color:#f4c430;}
+.hero p{margin-top:15px;font-size:16px;}
+.btn{
+display:inline-block;margin:10px;
+padding:12px 28px;border-radius:40px;
+text-decoration:none;font-weight:600;
+transition:.3s;
+}
+.btn-wa{background:#25D366;color:white;}
+.btn-map{background:#4285F4;color:white;}
+.btn:hover{transform:scale(1.05);}
+.language{
+position:absolute;top:20px;right:20px;
+}
+.language button{
+padding:6px 12px;border:none;
+border-radius:6px;margin-left:5px;
+cursor:pointer;font-weight:600;
+background:#f4c430;
+}
+.card{
+background:white;padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+margin-bottom:20px;
+transition:.4s;
+}
+.card:hover{transform:translateY(-8px);}
+.price{color:#f4c430;font-weight:700;}
+form{
+background:white;padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+max-width:500px;margin:auto;
+}
+input,select,textarea{
+width:100%;padding:12px;margin-bottom:15px;
+border-radius:10px;border:1px solid #ccc;
+}
+button.submit{
+background:#25D366;color:white;
+border:none;padding:14px;border-radius:40px;
+width:100%;font-weight:600;cursor:pointer;
+}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:12px;
+}
+.gallery img{
+width:100%;
+border-radius:15px;
+cursor:pointer;
+transition:.3s;
+}
+.gallery img:hover{transform:scale(1.05);}
+.lightbox{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+}
+.lightbox img{
+max-width:90%;
+border-radius:15px;
+}
+.testimoni{
+background:#111;color:white;
+}
+.slider{
+max-width:600px;margin:auto;
+text-align:center;
+}
+.review{
+display:none;
+font-size:16px;
+}
+iframe{
+width:100%;border-radius:20px;height:350px;
+}
+.float-wa{
+position:fixed;bottom:25px;right:25px;
+background:#25D366;color:white;
+padding:16px 20px;border-radius:50px;
+text-decoration:none;font-weight:600;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+footer{
+background:black;color:white;
+text-align:center;padding:25px;
+}
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="language">
+<button onclick="setLang('id')">ID</button>
+<button onclick="setLang('en')">EN</button>
+</div>
+
+<div class="hero">
+<h1>🏡 GoClean VIP</h1>
+<p id="subtitle">Premium House & Garden Cleaning Service</p>
+<a href="https://wa.me/6285945466409" class="btn btn-wa">WhatsApp</a>
+<a href="https://www.google.com/maps?q=Merendeng,Kuta,Mandalika" target="_blank" class="btn btn-map">Google Maps</a>
+</div>
+
+<section>
+<h2 id="priceTitle">Price List</h2>
+
+<div class="card">
+<h3>Small House (1-2 Rooms)</h3>
+<div class="price">Rp120.000 – Rp150.000</div>
+</div>
+
+<div class="card">
+<h3>Medium House (3-4 Rooms)</h3>
+<div class="price">Rp180.000 – Rp250.000</div>
+</div>
+
+<div class="card">
+<h3>Large / Premium Villa</h3>
+<div class="price">Rp300.000 – Rp450.000</div>
+</div>
+</section>
+
+<section>
+<h2 id="galleryTitle">Our Work</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf" onclick="openLightbox(this.src)">
+</div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<section class="testimoni">
+<h2>Customer Reviews</h2>
+<div class="slider">
+<div class="review">⭐⭐⭐⭐⭐ Excellent and fast service! – Sarah</div>
+<div class="review">⭐⭐⭐⭐⭐ Villa cleaned perfectly! – Made</div>
+<div class="review">⭐⭐⭐⭐⭐ Trusted & professional team. – John</div>
+</div>
+</section>
+
+<section>
+<h2>Location</h2>
+<iframe src="https://www.google.com/maps?q=Merendeng,Kuta,Mandalika&output=embed"></iframe>
+</section>
+
+<section>
+<h2>Booking</h2>
+<form onsubmit="sendWA(); return false;">
+<input type="text" id="name" placeholder="Name" required>
+<input type="text" id="address" placeholder="Address" required>
+<select id="service">
+<option>Small House</option>
+<option>Medium House</option>
+<option>Large Villa</option>
+</select>
+<input type="date" id="date" required>
+<textarea id="note" placeholder="Note"></textarea>
+<button type="submit" class="submit">Send Booking</button>
+</form>
+</section>
+
+<footer>
+Merendeng, Kuta Mandalika <br>
+© 2026 GoClean VIP
+</footer>
+
+<a class="float-wa" href="https://wa.me/6285945466409" target="_blank">💬 WhatsApp</a>
+
+<script>
+function sendWA(){
+var name=document.getElementById("name").value;
+var address=document.getElementById("address").value;
+var service=document.getElementById("service").value;
+var date=document.getElementById("date").value;
+var note=document.getElementById("note").value;
+var text="Booking GoClean VIP:%0AName:"+name+"%0AAddress:"+address+"%0AService:"+service+"%0ADate:"+date+"%0ANote:"+note;
+window.open("https://wa.me/6285945466409?text="+text,"_blank");
+}
+
+function openLightbox(src){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=src;
+}
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+let reviews=document.querySelectorAll(".review");
+let index=0;
+function showReview(){
+reviews.forEach(r=>r.style.display="none");
+reviews[index].style.display="block";
+index=(index+1)%reviews.length;
+}
+setInterval(showReview,3000);
+showReview();
+
+function setLang(lang){
+if(lang==='id'){
+document.getElementById("subtitle").innerText="Layanan Kebersihan Premium";
+document.getElementById("priceTitle").innerText="Daftar Harga";
+document.getElementById("galleryTitle").innerText="Hasil Kerja Kami";
+}
+}
+</script>
+
+</body>
+</html>
